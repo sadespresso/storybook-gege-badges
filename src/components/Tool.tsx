@@ -1,40 +1,40 @@
-import React, { memo, useCallback, useEffect } from "react";
-import { useGlobals, type API } from "storybook/internal/manager-api";
-import { IconButton } from "storybook/internal/components";
-import { ADDON_ID, KEY, TOOL_ID } from "../constants";
-import { LightningIcon } from "@storybook/icons";
+import React, { memo } from "react";
+import { TOOL_ID } from "../constants";
+import { useBadges, usePresets } from "../helpers";
+import { Badge } from "./Badge";
 
-export const Tool = memo(function MyAddonSelector({ api }: { api: API }) {
-  const [globals, updateGlobals, storyGlobals] = useGlobals();
+export const Tool = memo(function Badges() {
+  const badges = useBadges();
+  const presets = usePresets();
 
-  const isLocked = KEY in storyGlobals;
-  const isActive = !!globals[KEY];
-
-  const toggle = useCallback(() => {
-    updateGlobals({
-      [KEY]: !isActive,
-    });
-  }, [isActive]);
-
-  useEffect(() => {
-    api.setAddonShortcut(ADDON_ID, {
-      label: "Toggle Measure [O]",
-      defaultShortcut: ["O"],
-      actionName: "outline",
-      showInMenu: false,
-      action: toggle,
-    });
-  }, [toggle, api]);
+  console.log({ badges });
 
   return (
-    <IconButton
+    <div
       key={TOOL_ID}
-      active={isActive}
-      disabled={isLocked}
-      title="Enable my addon"
-      onClick={toggle}
+      hidden={!badges || !badges.length}
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "end",
+        flexWrap: "nowrap",
+        overflowX: "auto",
+        gap: "4px",
+      }}
     >
-      <LightningIcon />
-    </IconButton>
+      {badges?.map((param, index) => {
+        const badgeProps = typeof param === "string" ? presets[param] : param;
+
+        if (badgeProps === null || badgeProps === undefined) return undefined;
+
+        return (
+          <Badge
+            key={`${TOOL_ID}=${badgeProps.title}-${index}`}
+            {...badgeProps}
+          />
+        );
+      })}
+    </div>
   );
 });

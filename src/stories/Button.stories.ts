@@ -43,11 +43,26 @@ export const Large: Story = {
     size: "large",
     label: "Button",
   },
+  parameters: {
+    badges: ["beta"],
+  },
 };
 
 export const Small: Story = {
   args: {
     size: "small",
     label: "Button",
+  },
+  parameters: {
+    badges: [
+      {
+        title: "New",
+        description: "Fresh out of the oven",
+        style: {
+          color: "white",
+          backgroundColor: "lightgreen",
+        },
+      },
+    ],
   },
 };

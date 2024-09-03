@@ -10,20 +10,15 @@
  */
 import type { ProjectAnnotations, Renderer } from "storybook/internal/types";
 
-import { KEY } from "./constants";
-import { withGlobals } from "./withGlobals";
-import { withRoundTrip } from "./withRoundTrip";
+import { PRESETS_KEY } from "./constants";
+import { defaultBadgePresets } from "./defaults";
 
-/**
- * Note: if you want to use JSX in this file, rename it to `preview.tsx`
- * and update the entry prop in tsup.config.ts to use "src/preview.tsx",
- */
-
-const preview: ProjectAnnotations<Renderer> = {
-  decorators: [withGlobals, withRoundTrip],
-  initialGlobals: {
-    [KEY]: false,
+export const parameters = {
+  [PRESETS_KEY]: {
+    ...defaultBadgePresets,
   },
 };
+
+const preview: ProjectAnnotations<Renderer> = {};
 
 export default preview;
