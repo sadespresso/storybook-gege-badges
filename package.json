@@ -1,9 +1,15 @@
 {
   "name": "badges",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Badge to annotate Storybook stories",
   "keywords": [
-    "badge", "badges", "tag", "tags", "annotate", "annotation", "storybook-addons",
+    "badge",
+    "badges",
+    "tag",
+    "tags",
+    "annotate",
+    "annotation",
+    "storybook-addons",
     "storybook badges",
     "badges"
   ],
@@ -100,7 +106,15 @@
   "storybook": {
     "displayName": "Badges",
     "supportedFrameworks": [
-      "react", "vue", "angular", "web-components", "ember", "html", "svelte", "preact", "react-native"
+      "react",
+      "vue",
+      "angular",
+      "web-components",
+      "ember",
+      "html",
+      "svelte",
+      "preact",
+      "react-native"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
   }
