@@ -37,6 +37,21 @@ const preview: Preview = {
 
 ### Specify in story params
 
+#### Default badges
+
+Specify badges in `preview.ts` and it will show everywhere where badges is not defined.
+
+```typescript
+// preview.ts
+
+const preview: Preview = {
+  parameters: {
+    badgePresets: { ... },
+    badges: ['stable'] // shows only when `badges` is not specified for the story, or stories
+  },
+};
+```
+
 #### For all stories of same component
 
 ```typescript
@@ -46,6 +61,7 @@ const preview: Preview = {
 const meta: Meta<typeof MyComponent> = {
   component: MyComponent,
   parameters: {
+    // will override any top-level badge (preview)
     badges: [
       "beta", // Defined in `preview.ts`
       {
@@ -58,6 +74,17 @@ const meta: Meta<typeof MyComponent> = {
       },
     ]
   }
+}
+```
+
+#### For a single story
+
+```typescript
+/// MyComponent.stories.tsx
+
+export const EdgeCaseWIP: Story = {
+  args: { ... },
+  badges: ['wip'] // will override any top-level badge (meta, preview)
 }
 ```
 
