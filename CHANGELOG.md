@@ -1,3 +1,15 @@
+# v0.0.3 (Wed Sep 04 2024)
+
+#### ⚠️ Pushed to `main`
+
+- Update README.md ([@sadespresso](https://github.com/sadespresso))
+
+#### Authors: 1
+
+- Батмэнд Ганбаатар ([@sadespresso](https://github.com/sadespresso))
+
+---
+
 # v0.0.2 (Wed Sep 04 2024)
 
 #### ⚠️ Pushed to `main`
