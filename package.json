@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sadespresso/badges"
+    "url": "git+https://github.com/sadespresso/storybook-gege-badges.git"
   },
   "type": "module",
   "license": "MIT",
