@@ -7,7 +7,14 @@ const meta: Meta<typeof Header> = {
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
     layout: "fullscreen",
-    badges: ["new", "wip", "deprecated", "beta", "stable"],
+    badges: ["new", "wip", "deprecated", "beta", "stable", {
+      title: "Sep 1",
+      description: "Back to school special",
+      style: {
+        color: "#050505",
+        backgroundColor: "#DBACFF",
+      },
+    },],
   },
 };
 
