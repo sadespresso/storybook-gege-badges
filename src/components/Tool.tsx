@@ -7,8 +7,6 @@ export const Tool = memo(function Badges() {
   const badges = useBadges();
   const presets = usePresets();
 
-  console.log({ badges });
-
   return (
     <div
       key={TOOL_ID}

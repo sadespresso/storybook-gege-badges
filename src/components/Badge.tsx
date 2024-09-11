@@ -26,12 +26,6 @@ const BadgeComponent: FunctionComponent<BadgeProps> = ({
         ? defaultStyles
         : {};
 
-  console.log({
-    resolvedDefaultStyles,
-    type: typeof defaultStyles,
-    defaultStyles,
-  });
-
   return (
     <div
       title={description}
